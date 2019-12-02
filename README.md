@@ -12,4 +12,6 @@ News Finder API akan mengembalikan sebuah response berbentuk JSON yang berisikan
 
 Cara menggunakan API ini cukup simple : Ganti keyword dengan kata yang Anda ingin cari 
 
+API ini akan dimanfaatkan oleh * [Twitter API](https://github.com/luthfiihakiim/TST-018), API yang digunakan Twitter Bot yang dibuat oleh teman sekelompok saya Luthfi E.T. NIM 18217018.
+
 API ini sudah di-*deploy* dan dapat dicoba di https://news-look.herokuapp.com/
