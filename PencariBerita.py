@@ -24,8 +24,8 @@ def home():
         <h2>A prototype API for national and international news feed getter.</h2>
         <p> Untuk menggunakan API ini, terdapat 2 endpoint :</p>
         <ul>
-            <li> /resources/news/internasional/keyword </li>
-            <li> /resources/news/dalamnegeri/keyword </li>
+            <li> /internasional/keyword </li>
+            <li> /dalamnegeri/keyword </li>
         </ul>
         <p> Cara menggunakan API ini cukup simple : Ganti keyword dengan kata yang Anda ingin cari </p>
         <h3> Terima Kasih! </h3>
@@ -35,16 +35,7 @@ def home():
     except Exception as e:
         raise e
 
-@app.route('/resources/documentation')
-def documentation():
-    try:
-        return redirect('https://app.swaggerhub.com/apis/daffaadevvv/NewsFeederAPI/1.0.0', code = 303)
-    
-    except Exception as e:
-        raise e
-
-
-@app.route('/resources/news/internasional/<keyword>')
+@app.route('/internasional/<keyword>')
 def indexinter(keyword):
     try:
         # A list to hold all headlines
@@ -78,7 +69,7 @@ def indexinter(keyword):
     except Exception as e:
         raise e
 
-@app.route('/resources/news/dalamnegeri/<keyword>')
+@app.route('/dalamnegeri/<keyword>')
 def indexnat(keyword):
     try:
         # A list to hold all headlines
