@@ -20,8 +20,16 @@ def getHeadlines( rss_url ):
 @app.route('/')
 def home():
     try:
-        return '''<h1>Welcome to News Feeder API</h1>
-        <p>A prototype API for national and international news feed getter.</p>'''
+        return '''<h1>Selamat Datang ke News Feeder API!</h1>
+        <h2>A prototype API for national and international news feed getter.</h2>
+        <p> Untuk menggunakan API ini, terdapat 2 endpoint :</p>
+        <ul>
+            <li> /resources/news/internasional/keyword </li>
+            <li> /resources/news/dalamnegeri/keyword </li>
+        </ul>
+        <p> Cara menggunakan API ini cukup simple : Ganti keyword dengan kata yang Anda ingin cari </p>
+        <h3> Terima Kasih! </h3>
+        '''
 
     except Exception as e:
         raise e
