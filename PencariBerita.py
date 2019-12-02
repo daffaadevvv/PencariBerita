@@ -107,6 +107,7 @@ def indexnat(keyword):
             if phrase in natheadline.lower():
                 results['link'] = natheadline
                 results['phrase'] = ('kata pencarian anda adalah ',phrase)
+                break
         
         print(results)
         return jsonify(results)
