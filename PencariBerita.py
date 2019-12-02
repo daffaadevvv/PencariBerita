@@ -29,6 +29,7 @@ def home():
         </ul>
         <p> Cara menggunakan API ini cukup simple : Ganti keyword dengan kata yang Anda ingin cari </p>
         <h3> Terima Kasih! </h3>
+        <p><strong> Created by Muhammad Daffa Alfaridzi - 18217013</strong></p>
         '''
 
     except Exception as e:
