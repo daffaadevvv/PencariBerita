@@ -17,7 +17,7 @@ def getHeadlines( rss_url ):
     except Exception as e:
         raise e
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def home():
     try:
         return '''<h1>Welcome to News Feeder API</h1>
@@ -26,7 +26,7 @@ def home():
     except Exception as e:
         raise e
 
-@app.route('/resources/documentation', methods=['GET'])
+@app.route('/resources/documentation')
 def documentation():
     try:
         return redirect('https://app.swaggerhub.com/apis/daffaadevvv/NewsFeederAPI/1.0.0', code = 303)
@@ -35,7 +35,7 @@ def documentation():
         raise e
 
 
-@app.route('/resources/news/internasional/<keyword>', methods=['GET'])
+@app.route('/resources/news/internasional/<keyword>')
 def indexinter(keyword):
     try:
         # A list to hold all headlines
@@ -69,7 +69,7 @@ def indexinter(keyword):
     except Exception as e:
         raise e
 
-@app.route('/resources/news/dalamnegeri/<keyword>', methods=['GET'])
+@app.route('/resources/news/dalamnegeri/<keyword>')
 def indexnat(keyword):
     try:
         # A list to hold all headlines
@@ -97,7 +97,7 @@ def indexnat(keyword):
 
         for natheadline in allnatheadlines:
             if phrase in natheadline.lower():
-                results['link'] = interheadline
+                results['link'] = natheadline
                 results['phrase'] = ('kata pencarian anda adalah ',phrase)
         
         print(results)
