@@ -49,15 +49,19 @@ def indexinter(keyword):
         # Iterate over the feed urls
         for key,url in newsinturls.items():
             # Call getHeadlines() and combine the returned headlines with allheadlines
-            allinterheadlines.extend( getHeadlines( url ) 
+            allinterheadlines.extend( getHeadlines( url ) ) 
         
         
         phrase = keyword.lower()
-        results = []
-
+        results = {
+            'phrase': phrase,
+            'link': 'Link tidak ditemukan'
+        }
         for interheadline in allinterheadlines:
             if phrase in interheadline.lower():
-                results.append(interheadline)
+                results['link'] = interheadline
+                results['phrase'] = ('kata pencarian anda adalah ',phrase)
+                break
         
         print(results)
         return jsonify(results)
@@ -86,11 +90,15 @@ def indexnat(keyword):
             allnatheadlines.extend( getHeadlines( url ) )
         
         phrase = keyword.lower()
-        results = []
+        results = {
+            'phrase': phrase,
+            'link': 'Link tidak ditemukan'
+        }
 
         for natheadline in allnatheadlines:
             if phrase in natheadline.lower():
-                results.append(natheadline)
+                results['link'] = interheadline
+                results['phrase'] = ('kata pencarian anda adalah ',phrase)
         
         print(results)
         return jsonify(results)
